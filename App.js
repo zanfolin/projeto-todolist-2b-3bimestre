@@ -6,9 +6,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View>
-        <Image source={logo} />
+        <Image source={logo} style={styles.logo}/>
       </View>
-      <Text>Projeto 2B - 12+1/08/2025</Text>
+      <Text>Projeto 2B - 15/08/2025</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -21,4 +21,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  logo: {
+    height: 128,
+    width: 128,
+  }
 });
