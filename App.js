@@ -11,12 +11,15 @@ import {
 import logo from "./assets/icon_todo_list.png";
 import btnAdd from "./assets/btnAdd.png";
 import { useState } from "react";
+import { FlashList } from "@shopify/flash-list";
 
 export default function App() {
   const [tarefa, setTarefa] = useState("");
+  const [tarefas, setTarefas] = useState([]);
 
   const btnAdiconar = () => {
-    Alert.alert("TODO List", "Valor: " + tarefa);
+    //Alert.alert("TODO List", "Valor: " + tarefa);
+    setTarefas([tarefa, ...tarefas]);
     setTarefa("");
   };
 
@@ -36,6 +39,13 @@ export default function App() {
           <Image source={btnAdd} style={styles.btnAdd} />
         </TouchableOpacity>
       </View>
+      <View style={styles.viewTarefas}>
+        <FlashList
+          data={tarefas}
+          renderItem={({ item }) => <Text>{item}</Text>}
+        />
+      </View>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -68,4 +78,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 10,
   },
+  viewTarefas: {
+    width: "100%",
+    flex: 1
+  }
 });
