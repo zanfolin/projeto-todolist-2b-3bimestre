@@ -23,7 +23,7 @@ export default function App() {
     setTarefa("");
   };
 
-  renderItem = ({ item }) => <Text>{item}</Text>;
+  const renderItem = ({ item }) => <Text>{item}</Text>;
 
   return (
     <View style={styles.container}>
