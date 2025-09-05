@@ -23,6 +23,8 @@ export default function App() {
     setTarefa("");
   };
 
+  renderItem = ({ item }) => <Text>{item}</Text>;
+
   return (
     <View style={styles.container}>
       <View style={styles.viewLogo}>
@@ -42,7 +44,8 @@ export default function App() {
       <View style={styles.viewTarefas}>
         <FlashList
           data={tarefas}
-          renderItem={({ item }) => <Text>{item}</Text>}
+          renderItem={renderItem}
+          estimatedItemSize={50}
         />
       </View>
 
@@ -80,6 +83,6 @@ const styles = StyleSheet.create({
   },
   viewTarefas: {
     width: "100%",
-    flex: 1
-  }
+    flex: 1,
+  },
 });
