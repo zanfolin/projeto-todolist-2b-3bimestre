@@ -28,7 +28,7 @@ export default function App() {
   const renderItem = ({ item }) => (
     <View style={styles.viewItemRender}>
       <Checkbox value={false} />
-      <Text>{item}</Text>
+      <Text style={styles.textItemRender}>{item}</Text>
       <TouchableOpacity>
         <Image source={btnTrashBin} />
       </TouchableOpacity>
@@ -97,6 +97,11 @@ const styles = StyleSheet.create({
   },
   viewItemRender: {
     height: 50,
-    width: "100%"
+    width: "100%",
+    flexDirection: "row",
+    gap: 10
+  },
+  textItemRender: {
+    flex: 1
   }
 });
