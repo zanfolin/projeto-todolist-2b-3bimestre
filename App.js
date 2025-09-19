@@ -12,6 +12,7 @@ import logo from "./assets/icon_todo_list.png";
 import btnAdd from "./assets/btnAdd.png";
 import { useState } from "react";
 import { FlashList } from "@shopify/flash-list";
+import btnTrashBin from "./assets/trash-bin.png"
 
 export default function App() {
   const [tarefa, setTarefa] = useState("");
