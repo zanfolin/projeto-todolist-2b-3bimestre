@@ -23,7 +23,11 @@ export default function App() {
     setTarefa("");
   };
 
-  const renderItem = ({ item }) => <Text>{item}</Text>;
+  const renderItem = ({ item }) => (
+    <View style={styles.viewItemRender}>
+      <Text>{item}</Text>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
@@ -85,4 +89,8 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
   },
+  viewItemRender: {
+    height: 50,
+    width: "100%"
+  }
 });
