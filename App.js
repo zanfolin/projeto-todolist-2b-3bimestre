@@ -13,6 +13,7 @@ import btnAdd from "./assets/btnAdd.png";
 import { useState } from "react";
 import { FlashList } from "@shopify/flash-list";
 import btnTrashBin from "./assets/trash-bin.png"
+import Checkbox from "expo-checkbox";
 
 export default function App() {
   const [tarefa, setTarefa] = useState("");
@@ -26,7 +27,11 @@ export default function App() {
 
   const renderItem = ({ item }) => (
     <View style={styles.viewItemRender}>
+      <Checkbox value={false} />
       <Text>{item}</Text>
+      <TouchableOpacity>
+        <Image source={btnTrashBin} />
+      </TouchableOpacity>
     </View>
   );
 
