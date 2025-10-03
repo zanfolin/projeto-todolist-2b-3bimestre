@@ -12,7 +12,7 @@ import logo from "./assets/icon_todo_list.png";
 import btnAdd from "./assets/btnAdd.png";
 import { useState } from "react";
 import { FlashList } from "@shopify/flash-list";
-import btnTrashBin from "./assets/trash-bin.png"
+import btnTrashBin from "./assets/trash-bin.png";
 import Checkbox from "expo-checkbox";
 
 export default function App() {
@@ -25,11 +25,15 @@ export default function App() {
     setTarefa("");
   };
 
+  const btnExcluir = (item) => {
+    setTarefas(tarefas.filter((oldTarefas) => oldTarefas !== item));
+  };
+
   const renderItem = ({ item }) => (
     <View style={styles.viewItemRender}>
       <Checkbox value={false} />
       <Text style={styles.textItemRender}>{item}</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => btnExcluir(item)}>
         <Image source={btnTrashBin} />
       </TouchableOpacity>
     </View>
@@ -99,9 +103,9 @@ const styles = StyleSheet.create({
     height: 50,
     width: "100%",
     flexDirection: "row",
-    gap: 10
+    gap: 10,
   },
   textItemRender: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
